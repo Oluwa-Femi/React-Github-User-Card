@@ -3,11 +3,16 @@ import React from "react";
  class UserList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
-    return <div>This is User List</div>;
+    console.log("props from app", this.props.user)
+    return (<div className="user">
+        <img className="image" src={this.props.user.avatar_url}></img>
+        <p>Name: {this.props.user.name}</p>
+        <p>Bio: {this.props.user.bio}</p>
+        <p>Location: {this.props.user.location}</p>
+        </div>)
   }
 }
 
